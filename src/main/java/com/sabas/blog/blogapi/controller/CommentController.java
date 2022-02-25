@@ -2,6 +2,8 @@ package com.sabas.blog.blogapi.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +29,7 @@ public class CommentController {
 	
 	@PostMapping("/posts/{postId}/comments")
 	public ResponseEntity<CommentDto> createComment(@PathVariable(value="postId")Long postId,
-			@RequestBody CommentDto commentDto){
+			@Valid @RequestBody CommentDto commentDto){
 		return new ResponseEntity<CommentDto>(
 				commentService.createComment(postId, commentDto), HttpStatus.CREATED);
 	}

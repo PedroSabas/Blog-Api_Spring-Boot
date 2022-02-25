@@ -4,8 +4,12 @@ package com.sabas.blog.blogapi.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-// Clase que lanza excepciones relacionadas con los metodos implementados, cuando no se encuentra un recurso
-// Muestra Los errores, Perzonalizamos excepciones.
+/*
+ * 
+ * Clase que lanza excepciones relacionadas con los metodos implementados, cuando no se encuentra un recurso
+ *  Muestra Los errores, Perzonalizamos excepciones.
+ * 
+ * */
 
 
 @ResponseStatus(value = HttpStatus.NOT_FOUND)// Retorna un Código de estado

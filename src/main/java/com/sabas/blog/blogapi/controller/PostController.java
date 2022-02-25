@@ -2,7 +2,7 @@ package com.sabas.blog.blogapi.controller;
 
 
 
-
+import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,8 +31,8 @@ public class PostController {
 	}
 	
 	// create blog post rest api
-	@PostMapping
-	public ResponseEntity<PostDto> createPost(@RequestBody PostDto postDto) {
+	@PostMapping                             // @Valid todo lo que llegue de la request se hace validación
+	public ResponseEntity<PostDto> createPost(@Valid @RequestBody PostDto postDto) {
 		return new ResponseEntity<>(postService.createPost(postDto), HttpStatus.CREATED);
 	}
 
