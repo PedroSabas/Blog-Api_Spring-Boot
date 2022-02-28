@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -20,6 +21,7 @@ import com.sabas.blog.blogapi.security.JwtAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity // Habilitamos vía web
+@EnableGlobalMethodSecurity(prePostEnabled = true) // Es necesario abilitarse para permitir acceso a siertos meyodos respecto a su rol
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	/* Las siguientes tres instancias bienen de el paquete security y sus respectivas clases */
